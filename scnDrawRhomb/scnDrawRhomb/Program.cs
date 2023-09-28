@@ -5,45 +5,106 @@ class Program
 {
     static void Main()
     {
-        int n = 5; // Размер ромба (можете изменить на желаемое значение)
+        bool repeat = true;
 
-        for (int i = 1; i <= n; i++)
+        while (repeat)
         {
-            for (int j = 1; j <= n - i; j++)
-            {
-                Console.Write(" ");
-            }
+            Console.Write("Введите длину сторон ромба (нечетное число): ");
+            int sideLength = int.Parse(Console.ReadLine());
 
-            Console.Write("/");
+            Console.Write("Выберите цвет (черный/белый): ");
+            string colorInput = Console.ReadLine();
+            bool isWhite = colorInput.ToLower() == "белый";
 
-            for (int j = 2; j < 2 * i; j++)
-            {
-                Console.Write(" ");
-            }
+            DrawDiamond(sideLength, isWhite);
 
-            Console.Write("\\");
+            Console.Write("Повторить? (да/нет): ");
+            string repeatInput = Console.ReadLine();
+            repeat = repeatInput.ToLower() == "да";
 
-            Console.WriteLine();
+            Console.Clear();
         }
+    }
 
-        for (int i = n - 1; i >= 1; i--)
+    static void DrawDiamond(int sideLength, bool isWhite)
+    {
+
+        if (isWhite)
         {
-            for (int j = 1; j <= n - i; j++)
+            for (int i = 1; i <= sideLength; i++)
             {
-                Console.Write(" ");
+                for (int j = 1; j <= sideLength - i; j++)
+                {
+                    Console.Write(" ");
+                }
+
+                for (int j = 1; j <= 2 * i - 1; j++)
+                {
+                    Console.Write("*");
+                }
+
+                Console.WriteLine();
             }
 
-            Console.Write("\\");
-
-            for (int j = 2; j < 2 * i; j++)
+            for (int i = sideLength - 1; i >= 1; i--)
             {
-                Console.Write(" ");
+                for (int j = 1; j <= sideLength - i; j++)
+                {
+                    Console.Write(" ");
+                }
+
+                for (int j = 1; j <= 2 * i - 1; j++)
+                {
+                    Console.Write("*");
+                }
+
+                Console.WriteLine();
             }
-
-            Console.Write("/");
-
-            Console.WriteLine();
         }
+        else
+        {
+            for (int i = 1; i <= sideLength; i++)
+            {
+                for (int j = 1; j <= sideLength - i; j++)
+                {
+                    Console.Write("*");
+                }
+
+                for (int j = 1; j <= 2 * i - 1; j++)
+                {
+                    Console.Write(" ");
+                }
+
+                for (int j = 1; j <= sideLength - i; j++)
+                {
+                    Console.Write("*");
+                }
+
+                Console.WriteLine();
+            }
+
+            for (int i = sideLength - 1; i >= 1; i--)
+            {
+                for (int j = 1; j <= sideLength - i; j++)
+                {
+                    Console.Write("*");
+                }
+
+                for (int j = 1; j <= 2 * i - 1; j++)
+                {
+                    Console.Write(" ");
+                }
+
+                for (int j = 1; j <= sideLength - i; j++)
+                {
+                    Console.Write("*");
+                }
+
+                Console.WriteLine();
+            }
+        }
+                
+        Console.WriteLine();
     }
 }
 

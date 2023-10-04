@@ -54,11 +54,11 @@ class Program
                     if (count % 2 == 1)
                     {
                         Console.CursorLeft = width - 1;
-                        Console.Write("\u25A0");
+                        Console.Write("█");
                     }
                     else
                     {
-                        Console.Write("\u25A0");
+                        Console.Write("█");
                     }
                 }
                 else if (direction == 2)
@@ -66,11 +66,11 @@ class Program
                     if (count % 2 == 0)
                     {
                         Console.CursorLeft = width - 1;
-                        Console.Write("\u25A0");
+                        Console.Write("█");
                     }
                     else
                     {
-                        Console.Write("\u25A0");
+                        Console.Write("█");
                     }
                 }
             }
@@ -78,7 +78,7 @@ class Program
             {
                 for (int j = 0; j < width; j++)
                 {
-                    Console.Write("\u25A0");
+                    Console.Write("█");
                 }
             }
             Console.WriteLine();
@@ -94,7 +94,7 @@ class Program
             {
                 if (j % 2 == 0)
                 {
-                    Console.Write("\u25A0");
+                    Console.Write("█");
                 }
                 else
                 {
@@ -105,7 +105,7 @@ class Program
                         {
                             if (count % 2 == 1)
                             {
-                                Console.Write("\u25A0");
+                                Console.Write("█");
                             }
                             else
                             {
@@ -117,7 +117,7 @@ class Program
                         {
                             if (count % 2 == 0)
                             {
-                                Console.Write("\u25A0");
+                                Console.Write("█");
                             }
                             else
                             {
@@ -135,7 +135,7 @@ class Program
                         {
                             if (count % 2 == 0)
                             {
-                                Console.Write("\u25A0");
+                                Console.Write("█");
                             }
                             else
                             {
@@ -147,7 +147,7 @@ class Program
                         {
                             if (count % 2 == 1)
                             {
-                                Console.Write("\u25A0");
+                                Console.Write("█");
                             }
                             else
                             {

@@ -39,14 +39,14 @@
             buUp.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             buUp.Location = new Point(12, 20);
             buUp.Name = "buUp";
-            buUp.Size = new Size(218, 109);
+            buUp.Size = new Size(348, 109);
             buUp.TabIndex = 0;
             buUp.Text = "00:00.000";
             buUp.UseVisualStyleBackColor = true;
             // 
             // buUpPause
             // 
-            buUpPause.Location = new Point(246, 20);
+            buUpPause.Location = new Point(366, 20);
             buUpPause.Name = "buUpPause";
             buUpPause.Size = new Size(111, 109);
             buUpPause.TabIndex = 1;
@@ -55,16 +55,16 @@
             // 
             // pbUp
             // 
-            pbUp.Location = new Point(380, 20);
+            pbUp.Location = new Point(508, 20);
             pbUp.Name = "pbUp";
-            pbUp.Size = new Size(408, 34);
+            pbUp.Size = new Size(280, 34);
             pbUp.TabIndex = 2;
             // 
             // pbUpMs
             // 
-            pbUpMs.Location = new Point(380, 95);
+            pbUpMs.Location = new Point(508, 95);
             pbUpMs.Name = "pbUpMs";
-            pbUpMs.Size = new Size(408, 34);
+            pbUpMs.Size = new Size(280, 34);
             pbUpMs.TabIndex = 3;
             // 
             // Form1

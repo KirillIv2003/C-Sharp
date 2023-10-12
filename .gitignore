@@ -361,3 +361,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/cnsDrawPatternColor/cnsDrawPatternColor.sln
+/cnsDrawPatternColor/cnsDrawPatternColor/cnsDrawPatternColor.csproj
+/cnsDrawSnail/cnsDrawSnail.sln
+/cnsDrawSnail/cnsDrawSnail/cnsDrawSnail.csproj
+/cnsDrawPatternColor/cnsDrawPatternColor/Program.cs
+/cnsDrawSnail/cnsDrawSnail/Program.cs

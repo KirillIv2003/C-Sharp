@@ -8,13 +8,15 @@ namespace wfaGameTrainerAccount
         {
             InitializeComponent();
 
+
             g = new Game();
             g.Change += G_Change;
             g.DoReset();
 
             buYes.Click += (s, e) => g.DoAnswer(true);
             buNo.Click += (s, e) => g.DoAnswer(false);
-
+            buPr.Click += (s, e) => g.DoPropusk();
+            buStart.Click += (s, e) => g.DoRestart();
         }
 
         private void G_Change(object? sender, EventArgs e)

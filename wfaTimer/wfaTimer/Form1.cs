@@ -8,6 +8,8 @@ namespace wfaTimer
         private System.Windows.Forms.Timer tmDown = new();
         private DateTime startTimerUp;
         private DateTime pauseTimerUp;
+        private DateTime endTimerDown;
+        private DateTime pauseTimerDown;
 
         public Form1()
         {
@@ -19,6 +21,46 @@ namespace wfaTimer
             buUpPause.Click += BuUpPause_Click;
             pbUp.Maximum = SEC_MAX;
             pbUpMs.Maximum = SEC_MAX * 1000;
+
+            tmDown.Interval = 100;
+            tmDown.Tick += TmDown_Tick;
+            buDown.Click += BuDown_Click;
+            buDownPause.Click += BuDownPause_Click;
+            pbDown.Value = pbDown.Maximum = SEC_MAX;
+            pbDownMs.Value = pbDownMs.Maximum = SEC_MAX * 1000;
+        }
+
+        private void BuDownPause_Click(object? sender, EventArgs e)
+        {
+            if (tmDown.Enabled)
+            {
+                pauseTimerDown = DateTime.Now;
+                tmDown.Stop();
+            }
+            else
+            {
+                endTimerDown = DateTime.Now + (endTimerDown - pauseTimerDown);
+                tmDown.Start();
+            }
+        }
+
+        private void BuDown_Click(object? sender, EventArgs e)
+        {
+            tmDown.Enabled = !tmDown.Enabled;
+            endTimerDown = DateTime.Now.AddSeconds(SEC_MAX);
+        }
+
+        private void TmDown_Tick(object? sender, EventArgs e)
+        {
+            var x = endTimerDown - DateTime.Now;
+            if (x.TotalSeconds < 0)
+            {
+                tmDown.Stop();
+                x = TimeSpan.Zero;
+            }
+            buDown.Text = x.ToString(@"mm\:ss\.fff");
+            pbDown.Value = (int)x.TotalSeconds;
+            pbDownMs.Value = (int)x.TotalMilliseconds;
         }
 
         private void BuUpPause_Click(object? sender, EventArgs e)

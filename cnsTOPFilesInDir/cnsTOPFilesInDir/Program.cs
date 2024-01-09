@@ -130,7 +130,7 @@ class Program
 {
     static void Main()
     {
-        string directoryPath = @"C:\Users\User\Desktop\Инситут\MobilApp"; // Change to the desired directory
+        string directoryPath = @"..\..\..\..\..\..\MobilApp"; // Change to the desired directory
         DirectoryAnalyzer directoryAnalyzer = new DirectoryAnalyzer(directoryPath);
 
         int topCount = 5; // Change to the desired number of items in the top lists

@@ -61,6 +61,16 @@ namespace wfaTimer
             buDown.Text = x.ToString(@"mm\:ss\.fff");
             pbDown.Value = (int)x.TotalSeconds;
             pbDownMs.Value = (int)x.TotalMilliseconds;
+
+            // Вычисление процентов выполнения
+            int percentSeconds = (int)Math.Min(x.TotalSeconds / SEC_MAX * 100, 100); // Ограничение до 100%
+            int percentMilliseconds = (int)(x.TotalMilliseconds / (SEC_MAX * 1000) * 100);
+
+            // Шаг в 10 процентов для label3
+            int roundedPercentSeconds = (percentSeconds / 10) * 10;
+
+            label3.Text = $"{roundedPercentSeconds}%";
+            label4.Text = $"{percentMilliseconds}%";
         }
 
         private void BuUpPause_Click(object? sender, EventArgs e)
@@ -98,6 +108,14 @@ namespace wfaTimer
             buUp.Text = x.ToString(@"hh\:mm\:ss\.fff");
             pbUp.Value = (int)x.TotalSeconds;
             pbUpMs.Value = (int)x.TotalMilliseconds;
+
+            int percentSeconds = (int)(x.TotalSeconds / SEC_MAX * 100);
+            int percentMilliseconds = (int)(x.TotalMilliseconds / (SEC_MAX * 1000) * 100);
+
+            int roundedPercentSeconds = (percentSeconds / 10) * 10;
+
+            label1.Text = $"{roundedPercentSeconds}%";
+            label2.Text = $"{percentMilliseconds}%";
         }
     }
 }

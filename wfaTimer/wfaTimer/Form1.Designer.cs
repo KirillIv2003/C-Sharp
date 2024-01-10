@@ -36,6 +36,10 @@
             buDownPause = new Button();
             pbDown = new ProgressBar();
             pbDownMs = new ProgressBar();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
             SuspendLayout();
             // 
             // buUp
@@ -104,11 +108,51 @@
             pbDownMs.Size = new Size(280, 34);
             pbDownMs.TabIndex = 7;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(513, 62);
+            label1.Name = "label1";
+            label1.Size = new Size(37, 25);
+            label1.TabIndex = 8;
+            label1.Text = "0%";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(513, 137);
+            label2.Name = "label2";
+            label2.Size = new Size(37, 25);
+            label2.TabIndex = 9;
+            label2.Text = "0%";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(514, 212);
+            label3.Name = "label3";
+            label3.Size = new Size(57, 25);
+            label3.TabIndex = 10;
+            label3.Text = "100%";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(511, 284);
+            label4.Name = "label4";
+            label4.Size = new Size(57, 25);
+            label4.TabIndex = 11;
+            label4.Text = "100%";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(pbDownMs);
             Controls.Add(pbDown);
             Controls.Add(buDownPause);
@@ -120,6 +164,7 @@
             Name = "Form1";
             Text = "wfaTimer";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -132,5 +177,9 @@
         private Button buDownPause;
         private ProgressBar pbDown;
         private ProgressBar pbDownMs;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
     }
 }
